@@ -1,0 +1,79 @@
+import java.util.Scanner;
+class Calculator{
+    public static int Add(int a, int b){
+        return(a+b);
+    }
+    public static int Sub(int a, int b){
+        return(a-b);
+    }
+    public static int Mul(int a, int b){
+        return(a*b);
+    }
+    public static int Div(int a, int b){
+        return(a/b);
+    }
+    public static int Rem(int a, int b){
+        return(a%b);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("!!!!!!!Welcome to the Lakshya Calculator!!!!!!!!\n");
+        int i;
+        do{
+        System.out.println("Enter First Number : ");
+        int a = sc.nextInt();
+        
+        System.out.println("Enter Second Number : ");
+        int b = sc.nextInt();
+        
+        System.out.println("\nMain Menu :\n 1. Addition\n 2. Substraction\n 3. Multiplication\n 4. Division\n 5. Remainder\n");
+        
+        boolean valid = false;
+        while(!valid){
+            System.out.println("Enter the Number Corresponds to the Operation :");
+        
+            int op = sc.nextInt();
+            switch(op){
+                case 1: 
+                    System.out.println("\nAddition Operation is Selected");
+                    System.out.println("Addition : "+Add(a,b));
+                    valid = true;
+                    break;
+                case 2: 
+                    System.out.println("\nSubstraction Operation is Selected");
+                    System.out.println("Substraction : "+Sub(a,b));
+                    valid = true;
+                    break;
+                case 3: 
+                    System.out.println("\nMultiplication Operation is Selected");
+                    System.out.println("Multiplication : "+Mul(a,b));
+                    valid = true;
+                    break;
+                case 4: 
+                    System.out.println("\nDivision Operation is Selected");
+                    if(b!=0){
+                    System.out.println("Division : "+Div(a,b));
+                    }else{
+                        System.out.println("Cannot Divide with Zero");
+                    }
+                    valid = true;
+                    break;
+                case 5: 
+                    System.out.println("\nRemainder Operation is Selected");
+                    if(b!=0){
+                    System.out.println("Remainder : "+Rem(a,b));
+                    }
+                    else{
+                        System.out.println("Cannot Find Remainder with Zero");
+                    }
+                    valid = true;
+                    break;
+                default: 
+                    System.out.println("Enter a Valid Case Number");
+            }
+        }
+        System.out.println("\nEnter :\n 1. To Continue\n 2. To Exit");
+        i = sc.nextInt();
+        }while(i==1);
+    }
+}
